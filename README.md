@@ -35,3 +35,8 @@ The page uses the CDN version of `canvas-confetti`, so the confetti effect requi
 ## LICENSE
 
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+
+## Author
+I spent half the time generating the images because I couldn't find the perfect ones online. Nonetheless, this was made with so much love for my lifetime friend 💕.
+
+- Ntsako Lydia Mashaba
