@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ofentse's Sweet Grace Patisserie 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🍰" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <main class="kitchen-container">
+    <header>
+      <h1>Ofentse's Sweet Grace Patisserie 💖</h1>
+      <p id="instruction">Stage 1: Tap the rolling pin to crush the biscuits!</p>
+    </header>
+
+    <!-- Main Kitchen Countertop Scene -->
+    <div id="kitchen-scene" class="kitchen-scene">
+      <!-- Kitchen background image -->
+      <img class="kitchen-bg" src="assets/background.jpg" alt="Pink kitchen background">
+
+      <div id="birthday-wall-sign" class="birthday-wall-sign hidden" aria-hidden="true">
+        <span class="birthday-title">Happy 26th Birthday, Ofentse!</span>
+      </div>
+
+      <!-- Image Canvas Surface for Rendered Assets -->
+      <div class="image-stage">
+        <img id="img-main" src="assets/biscuits.png" class="stage-img active biscuit-target" alt="Biscuits to crush">
+        <img id="img-crushed" src="assets/crushed_biscuits.png" class="draggable-ingredient hidden" draggable="true" alt="Crushed Biscuits">
+        <img id="img-butter" src="assets/melted_butter.png" class="stage-img hidden butter-target" alt="Melted Butter">
+        <img id="img-bowl" src="assets/bowl.png" class="stage-img hidden bowl-target" alt="White mixing bowl and whisk">
+        <img id="img-ingredient-sugar" src="assets/powdered_sugar.png" class="draggable-ingredient hidden" draggable="true" alt="Powdered Sugar">
+        <img id="img-ingredient-cheese" src="assets/cream_cheese.png" class="draggable-ingredient hidden" draggable="true" alt="Cream Cheese">
+        <img id="img-ingredient-filling" src="assets/filling.png" class="draggable-ingredient hidden" draggable="true" alt="Filling Bowl">
+          <img id="img-topping-cream" src="assets/whipped_cream.png" class="draggable-topping hidden" draggable="true" alt="Whipped Cream">
+          <img id="img-topping-berries" src="assets/berry_toppings.png" class="draggable-topping hidden" draggable="true" alt="Berries">
+          <img id="img-topping-candles" src="assets/candles.png" class="draggable-topping hidden" draggable="true" alt="Candles">
+      </div>
+
+      <!-- PNG lighter states (Stage 4) -->
+      <div id="lighter-tool" class="lighter-tool hidden" onclick="lightCandles()">
+        <img id="unlit-lighter" src="assets/unlit.png" alt="Unlit lighter">
+        <img id="lit-lighter" class="hidden" src="assets/lit.png" alt="Lit lighter">
+      </div>
+
+      <!-- Fridge Modal Overlay (Stage 3 Chill) -->
+      <div id="fridge-overlay" class="fridge-modal hidden">
+        <div class="fridge-content">
+          <img class="fridge-image" src="assets/fridge.png" alt="Pink fridge cooling the cheesecake">
+          <div class="timer-display" id="fridge-timer">5</div>
+        </div>
+      </div>
+
+      <!-- Magic Poof Cloud Animation (SVG) -->
+      <div id="poof-cloud" class="poof-effect hidden">
+        <svg viewBox="0 0 100 100" width="140">
+          <circle cx="50" cy="50" r="30" fill="#ffffff" opacity="0.9"/>
+          <circle cx="30" cy="45" r="20" fill="#fbcfe8" opacity="0.8"/>
+          <circle cx="70" cy="45" r="20" fill="#fbcfe8" opacity="0.8"/>
+          <circle cx="50" cy="25" r="20" fill="#ffffff" opacity="0.9"/>
+          <circle cx="50" cy="75" r="15" fill="#ffffff" opacity="0.8"/>
+        </svg>
+        <span class="poof-sparkle sparkle-one">✦</span>
+        <span class="poof-sparkle sparkle-two">✦</span>
+        <span class="poof-sparkle sparkle-three">✧</span>
+      </div>
+    </div>
+
+    <!-- Controls / Action Button Bar -->
+    <div id="action-bar" class="action-bar hidden">
+      <button id="btn-action" class="btn" onclick="handlePrimaryAction()"></button>
+    </div>
+  </main>
+
+  <!-- Final Birthday Card Reveal View -->
+  <section id="reveal-screen" class="reveal-screen hidden">
+    <!-- Floating Background Slices -->
+    <div class="floating-slices-bg">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+      <img class="slice" src="assets/cake_slice.png" alt="">
+    </div>
+
+    <div class="card-container">
+      <h2 class="birthday-title">🍰 Happy 26th Birthday, Ofentse! 🍰</h2>
+      <div class="photo-frame">
+        <span class="frame-sparkle frame-sparkle-one">✦</span>
+        <span class="frame-sparkle frame-sparkle-two">✦</span>
+        <span class="frame-sparkle frame-sparkle-three">✧</span>
+        <img src="assets/ofentse.jpeg" class="reveal-cake-img" alt="Ofentse">
+      </div>
+      <p class="blessing-text">
+        May the Lord bless you and keep you; may He make His face shine upon you and be gracious to you. May He lift His countenance upon you and give you peace throughout your 26th year. <span class="blessing-reference">Numbers 6:24–26</span>
+      </p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
