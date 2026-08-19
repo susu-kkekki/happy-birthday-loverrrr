@@ -1,4 +1,4 @@
-# Ofentse's Sweet Grace Patisserie 🍰❤️
+# Felicity's Sweet Grace Patisserie 🍰❤️
 
 An interactive birthday cheesecake experience for Ofentse's 26th birthday.
 
