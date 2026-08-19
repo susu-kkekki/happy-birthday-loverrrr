@@ -139,7 +139,7 @@ function processDrop(id, draggedEl) {
       updateInstruction('Mixing crushed biscuits into the melted butter...');
       triggerPoof(() => {
         document.getElementById('img-main').classList.remove('hidden');
-        document.getElementById('img-main').src = 'assets/crust.png';
+        document.getElementById('img-main').src = 'crust.png';
         document.getElementById('img-main').classList.add('crust-target');
         document.getElementById('img-butter').classList.add('hidden');
         document.getElementById('btn-action').innerText = 'Next stage: Make the filling';
@@ -149,7 +149,7 @@ function processDrop(id, draggedEl) {
     } else if (id === 'img-ingredient-filling') {
       updateInstruction('Placing the filling on the crust...');
       triggerPoof(() => {
-        document.getElementById('img-main').src = 'assets/crust_and_filling.png';
+        document.getElementById('img-main').src = 'crust_and_filling.png';
         runFridgeTimer();
       }, 3000);
     } else if (currentStage === 2) {
@@ -160,7 +160,7 @@ function processDrop(id, draggedEl) {
           document.getElementById('img-bowl').classList.add('hidden');
           document.getElementById('img-ingredient-filling').classList.remove('hidden');
           document.getElementById('img-main').classList.remove('hidden');
-          document.getElementById('img-main').src = 'assets/crust.png';
+          document.getElementById('img-main').src = 'crust.png';
           document.getElementById('img-main').classList.add('crust-target');
           updateInstruction("Drag the prepared filling bowl onto the crust!");
         }, 3000);
@@ -176,14 +176,14 @@ function processDrop(id, draggedEl) {
       toppingsAdded++;
       triggerPoof(() => {
         if (id === 'img-topping-berries') {
-          document.getElementById('img-main').src = 'assets/berry_topping.png';
+          document.getElementById('img-main').src = 'berry_topping.png';
           updateInstruction('Now add the whipped cream!');
         } else if (id === 'img-topping-cream') {
-          document.getElementById('img-main').src = 'assets/both_toppings.png';
+          document.getElementById('img-main').src = 'both_toppings.png';
           updateInstruction('Now add the candles!');
         } else {
           currentStage = 4;
-          document.getElementById('img-main').src = 'assets/cheesecake_blownout_candles.png';
+          document.getElementById('img-main').src = 'cheesecake_blownout_candles.png';
           document.getElementById('lighter-tool').classList.remove('hidden');
           document.getElementById('unlit-lighter').classList.remove('hidden');
           document.getElementById('lit-lighter').classList.add('hidden');
@@ -236,7 +236,7 @@ function lightCandles() {
   document.getElementById('unlit-lighter').classList.add('hidden');
   triggerPoof(() => {
     document.getElementById('lit-lighter').classList.remove('hidden');
-    document.getElementById('img-main').src = 'assets/cheesecake_lit_candles.png';
+    document.getElementById('img-main').src = 'cheesecake_lit_candles.png';
     updateInstruction("Blow into mic / tap cake to blow out candles!");
     document.getElementById('img-main').onclick = blowOutCandles;
   });
@@ -244,7 +244,7 @@ function lightCandles() {
 
 function blowOutCandles() {
   triggerPoof(() => {
-    document.getElementById('img-main').src = 'assets/cheesecake_blownout_candles.png';
+    document.getElementById('img-main').src = 'cheesecake_blownout_candles.png';
     document.getElementById('lit-lighter').classList.add('hidden');
     document.getElementById('unlit-lighter').classList.remove('hidden');
     document.getElementById('lighter-tool').classList.remove('hidden');
