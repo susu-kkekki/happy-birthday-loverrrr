@@ -6,6 +6,18 @@ let biscuitTaps = 0;
 let poofCallbackTimer;
 let poofHideTimer;
 
+const welcomeScreen = document.getElementById('welcome-screen');
+const enterBakeryButton = document.getElementById('enter-bakery');
+
+enterBakeryButton.addEventListener('click', () => {
+  welcomeScreen.classList.add('opening');
+  enterBakeryButton.disabled = true;
+  setTimeout(() => {
+    welcomeScreen.classList.add('closed');
+    document.getElementById('img-main').focus();
+  }, 1500);
+});
+
 function updateInstruction(text) {
   document.getElementById('instruction').innerText = text;
 }
