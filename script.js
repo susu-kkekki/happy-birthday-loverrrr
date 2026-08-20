@@ -249,7 +249,7 @@ function lightCandles() {
   triggerPoof(() => {
     document.getElementById('lit-lighter').classList.remove('hidden');
     document.getElementById('img-main').src = 'cheesecake_lit_candles.png';
-    updateInstruction("Blow into mic / tap cake to blow out candles!");
+    updateInstruction("Tap cake to blow out candles!");
     document.getElementById('img-main').onclick = blowOutCandles;
   });
 }
